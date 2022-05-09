@@ -1,0 +1,106 @@
+
+--
+-- Database: `testdb`
+--
+
+-- --------------------------------------------------------
+
+--
+-- Table structure for table `books`
+--
+
+CREATE TABLE `books` (
+  `id` int NOT NULL,
+  `title` varchar(50) NOT NULL,
+  `authors` varchar(50) NOT NULL,
+  `year` varchar(4) NOT NULL,
+  `ISBN` varchar(20) NOT NULL,
+  `genre` varchar(20) NOT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci;
+
+--
+-- Dumping data for table `books`
+--
+
+INSERT INTO `books` (`id`, `title`, `authors`, `year`, `ISBN`, `genre`) VALUES
+(1, 'Wallstreet', 'Mike Douglas', '2000', '37839989990773', 'Drama'),
+(2, 'AI In The Twenty-First Century', 'George Boyle', '2020', '34848849490030', 'Computer Science'),
+(3, 'A Tale Of Two Cities', 'Charles Dickens', '1960', '34849978790030', 'Fiction');
+
+-- --------------------------------------------------------
+
+--
+-- Table structure for table `customer`
+--
+
+CREATE TABLE `customer` (
+  `id` int NOT NULL,
+  `first_name` varchar(50) NOT NULL,
+  `last_name` varchar(40) NOT NULL,
+  `email` varchar(50) NOT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci;
+
+-- --------------------------------------------------------
+
+--
+-- Table structure for table `users`
+--
+
+CREATE TABLE `users` (
+  `id` int NOT NULL,
+  `username` varchar(50) NOT NULL,
+  `email` varchar(50) NOT NULL,
+  `password1` varchar(255) CHARACTER SET utf8mb4 COLLATE utf8mb4_0900_ai_ci NOT NULL,
+  `password2` varchar(255) CHARACTER SET utf8mb4 COLLATE utf8mb4_0900_ai_ci NOT NULL,
+  `hashed_password` varchar(255) DEFAULT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci;
+
+--
+-- Dumping data for table `users`
+--
+
+INSERT INTO `users` (`id`, `username`, `email`, `password1`, `password2`, `hashed_password`) VALUES
+(1, 'gggjk', 'rtrrryy@hjj.com', 'jjjjjjjj', 'uuuuuuuuuuuuu', NULL),
+(2, 'kofi', 'hooba88@gmail.com', '123456', '123456', NULL),
+(3, 'kofi12', 'cooba88@gmail.com', '12345', '12345', NULL),
+(4, 'kofi123', 'seeba88@gmail.com', '87654', '87654', NULL),
+(5, 'hopy', 'noocha88@gmail.com', '12341234', '12341234', NULL),
+(8, 'aol', 'uri@aol.com', '111111', '111111', NULL);
+
+--
+-- Indexes for dumped tables
+--
+
+--
+-- Indexes for table `books`
+--
+ALTER TABLE `books`
+  ADD PRIMARY KEY (`id`),
+  ADD UNIQUE KEY `ISBN` (`ISBN`);
+
+--
+-- Indexes for table `users`
+--
+ALTER TABLE `users`
+  ADD PRIMARY KEY (`id`),
+  ADD UNIQUE KEY `username` (`username`),
+  ADD UNIQUE KEY `email` (`email`),
+  ADD UNIQUE KEY `password1` (`password1`),
+  ADD UNIQUE KEY `password2` (`password2`);
+
+--
+-- AUTO_INCREMENT for dumped tables
+--
+
+--
+-- AUTO_INCREMENT for table `books`
+--
+ALTER TABLE `books`
+  MODIFY `id` int NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=4;
+
+--
+-- AUTO_INCREMENT for table `users`
+--
+ALTER TABLE `users`
+  MODIFY `id` int NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=9;
+COMMIT;

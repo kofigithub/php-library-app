@@ -1,0 +1,39 @@
+
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Stock Books</title>
+  <link rel="stylesheet" type="text/css" href="style.css">
+</head>
+<body>
+  <div class="header">
+  	<h2>Stock Books</h2>
+  </div>
+	
+  <form method="post" action="stock_books.php">
+  	<div class="input-group">
+  	  <label>Title</label>
+  	  <input type="text" name="title" >
+  	</div>
+  	<div class="input-group">
+  	  <label>Authors</label>
+  	  <input type="text" name="authors" >
+  	</div>
+  	<div class="input-group">
+  	  <label>Year of publication</label>
+  	  <input type="text" name="year" id ="yr">
+  	</div>
+  	<div class="input-group">
+  	  <label>ISBN</label>
+  	  <input type="text" name="isbn" id="isbn">
+  	</div>
+	<div class="input-group">
+  	  <label>Genre</label>
+  	  <input type="text" name="genre" id="genre">
+  	</div>
+  	<div class="input-group">
+  	  <button type="submit" class="btn" id="sbmt" name="submit" >Add</button>
+  	</div>
+  </form>
+</body>
+</html>
